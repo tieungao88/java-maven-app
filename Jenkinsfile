@@ -17,7 +17,7 @@ pipeline {
                     echo "building jar"
                     // # s/d groovy file
                     // gv.buildJar()
-                    # s/d library
+                    // # s/d library
                     buildJar()
                 }
             }
@@ -28,7 +28,7 @@ pipeline {
                     echo "building image"
                     // // # s/d groovy file
                     // gv.buildImage()
-                    # s/d library
+                    // # s/d library
                     buildImage()
                 }
             }
@@ -38,7 +38,7 @@ pipeline {
                 script {
                     echo "deploying"
                     // gv.deployApp()
-                    # s/d library
+                    // # s/d library
                     deployApp()
                 }
             }
