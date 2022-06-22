@@ -2,7 +2,7 @@
 def gv
 
 pipeline {
-    agent none
+    agent any
     stages {
         stage("init") {
             steps {
@@ -11,31 +11,31 @@ pipeline {
                 }
             }
         }
-        stage("build jar") {
-            agent {
-                docker { image 'maven:3.8.1-adoptopenjdk-11' }
-            }
-            steps {
-                script {
-                    echo "building jar"
-                    // # s/d groovy file
-                    // gv.buildJar()
-                    // # s/d library
-                    buildJar()
-                }
-            }
-        }
-        stage("build image") {
-            steps {
-                script {
-                    echo "building image"
-                    // // # s/d groovy file
-                    // gv.buildImage()
-                    // # s/d library
-                    buildImage()
-                }
-            }
-        }
+        // stage("build jar") {
+        //     agent {
+        //         docker { image 'maven:3.8.1-adoptopenjdk-11' }
+        //     }
+        //     steps {
+        //         script {
+        //             echo "building jar"
+        //             // # s/d groovy file
+        //             // gv.buildJar()
+        //             // # s/d library
+        //             buildJar()
+        //         }
+        //     }
+        // }
+        // stage("build image") {
+        //     steps {
+        //         script {
+        //             echo "building image"
+        //             // // # s/d groovy file
+        //             // gv.buildImage()
+        //             // # s/d library
+        //             buildImage()
+        //         }
+        //     }
+        // }
         stage("deploy") {
             steps {
                 script {
