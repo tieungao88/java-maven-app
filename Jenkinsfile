@@ -2,7 +2,7 @@
 def gv
 
 pipeline {
-    agent any
+    agent none
     stages {
         stage("init") {
             steps {
@@ -12,6 +12,9 @@ pipeline {
             }
         }
         stage("build jar") {
+            agent {
+                docker { image 'maven:3.8.1-adoptopenjdk-11' }
+            }
             steps {
                 script {
                     echo "building jar"
