@@ -1,3 +1,4 @@
+@Library('jenkins-share-lib')
 def gv
 
 pipeline {
@@ -14,7 +15,10 @@ pipeline {
             steps {
                 script {
                     echo "building jar"
-                    //gv.buildJar()
+                    // # s/d groovy file
+                    // gv.buildJar()
+                    # s/d library
+                    buildJar()
                 }
             }
         }
@@ -22,7 +26,10 @@ pipeline {
             steps {
                 script {
                     echo "building image"
-                    //gv.buildImage()
+                    // // # s/d groovy file
+                    // gv.buildImage()
+                    # s/d library
+                    buildImage()
                 }
             }
         }
@@ -30,7 +37,9 @@ pipeline {
             steps {
                 script {
                     echo "deploying"
-                    //gv.deployApp()
+                    // gv.deployApp()
+                    # s/d library
+                    deployApp()
                 }
             }
         }
