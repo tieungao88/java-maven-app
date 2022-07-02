@@ -48,7 +48,7 @@ pipeline {
                     echo "deploying"
                     // gv.deployApp()
                     // # s/d library
-                    deployApp()
+                    deployApp "tienbm-test"
                 }
             }
         }
