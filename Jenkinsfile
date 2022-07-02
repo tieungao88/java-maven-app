@@ -2,7 +2,7 @@
 def gv
 
 pipeline {
-    agent any
+    agent none
     stages {
         stage("init") {
             steps {
