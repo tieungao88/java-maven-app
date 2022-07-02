@@ -5,6 +5,9 @@ pipeline {
     agent none
     stages {
         stage("init") {
+            agent {
+                docker { image 'maven:3.8.1-adoptopenjdk-11' }
+            }
             steps {
                 script {
                     gv = load "script.groovy"
